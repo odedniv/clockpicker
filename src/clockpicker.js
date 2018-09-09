@@ -118,6 +118,11 @@
 		this.spanAmPm = popover.find('.clockpicker-span-am-pm');
 		this.amOrPm = "PM";
 
+		// For mobile view, close when clicking on gray area
+		popover.click(function(event) {
+			if (event.target === popover[0]) self.hide();
+		});
+
 		// Setup for for 12 hour clock if option is selected
 		if (options.twelvehour) {
 
